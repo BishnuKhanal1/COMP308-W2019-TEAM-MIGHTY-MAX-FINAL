@@ -13,10 +13,11 @@ import { BasePageComponent } from './partials/base-page/base-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { DetailsComponent } from './pages/details/details.component';
-import { SurveyListComponent } from './survey-operations/survey-list/survey-list.component';
+import { SurveyListComponent } from './pages/survey-operations/survey-list/survey-list.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+import {ProfileComponent} from './pages/profile/profile.component';
 
 // Services
 import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
@@ -30,7 +31,10 @@ import {
 // Route Guards
 import { AuthGuard } from './guards/auth.guard';
 // import { SurveyListComponent } from './survey-operations/survey-list/survey-list.component';
-import { SurveyComponent } from './survey-operations/survey/survey.component';
+import { SurveyComponent } from './pages/survey-operations/survey/survey.component';
+//import { ProfileComponent } from './pages/profile/profile.component';
+import { from } from 'rxjs';
+import { SurveySiteComponent } from './pages/survey-site/survey-site.component';
 
 export function jwtTokenGetter() {
   return localStorage.getItem('id_token');
@@ -49,7 +53,9 @@ export function jwtTokenGetter() {
     LoginComponent,
     DetailsComponent,
     SurveyListComponent,
-    SurveyComponent
+    SurveyComponent,
+    ProfileComponent,
+    SurveySiteComponent
   ],
   imports: [
     BrowserModule,

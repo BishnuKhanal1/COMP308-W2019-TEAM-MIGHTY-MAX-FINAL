@@ -10,18 +10,24 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
-import { SurveyListComponent } from './survey-operations/survey-list/survey-list.component';
-import { SurveyComponent } from './survey-operations/survey/survey.component';
+import { SurveyListComponent } from './pages/survey-operations/survey-list/survey-list.component';
+import {SurveyComponent} from './pages/survey-operations/survey/survey.component';
+import { SurveySiteComponent } from './pages/survey-site/survey-site.component';
+import {ProfileComponent} from './pages/profile/profile.component';
+
+
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Home'}},
   {path: 'about', component: AboutComponent, data: {title: 'About'}},
   {path: 'details', component: DetailsComponent, data: {title: 'Details'}},
+  {path: 'profile/:id', component: ProfileComponent, data: {title: 'Profile'}, canActivate: [AuthGuard]},
+
 
   {path: 'surveys', component: SurveyListComponent, data: {title: 'Surveys made by users'}},
-  {path: 'surveys/survey/:id', component: SurveyComponent /*canActivate: [AuthGuard]*/},
-  // {path: 'contact/contact-list/edit/:id', component: ContactDetailsComponent, data: {title: 'Edit Contact'}, canActivate: [AuthGuard]},
-  // {path: 'contact/contact-list/delete/:id', component: ContactDeleteComponent, data: {title: 'Add Contact'}, canActivate: [AuthGuard]},
+  {path: 'surveys/add', component: SurveySiteComponent, data: {title: 'Add a Survey'}, canActivate: [AuthGuard]},
+  {path: 'surveys/survey/:id', component: SurveyComponent},
+
 
   {path: 'register', component: RegisterComponent, data: {title: 'Register'}},
   {path: 'login', component: LoginComponent, data: {title: 'Register'}},

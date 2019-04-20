@@ -1,4 +1,4 @@
-// moddules for node and express
+// modules for node and express
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -95,7 +95,8 @@ passport.use(strategy);
 
 
 app.use('/api', indexRouter);
-app.use('/api/surveys' /*passport.authenticate('jwt', {session: false})*/, surveyRouter); 
+app.use('/api/surveys', surveyRouter); 
+app.use('/api/profile', /*passport.authenticate('jwt', {session: false}),*/ indexRouter); 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/index.html'));
 });

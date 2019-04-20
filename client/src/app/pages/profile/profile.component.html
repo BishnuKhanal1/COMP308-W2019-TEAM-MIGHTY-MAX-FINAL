@@ -3,9 +3,9 @@
     <div class="col-md-offset-4 col-md-6">
       <br />
       <div class="card">
-        <form autocomplete="off" (submit)="onRegisterSubmit()">
+        <form autocomplete="off" (submit)="onUsersUpdatedProfileInfo()">
           <div class="card-header text-center">
-            <h1>Please Register Here</h1>
+            <h1>{{ title }}</h1>
           </div>
           <div class="card-body">
             <fieldset class="form-group">
@@ -15,21 +15,7 @@
                 class="form-control"
                 [(ngModel)]="user.username"
                 name="username"
-                placeholder="Enter Username"
                 id="username"
-                required
-                autocomplete="off"
-              />
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="password">Password:</label>
-              <input
-                type="password"
-                class="form-control"
-                [(ngModel)]="user.password"
-                name="password"
-                placeholder="Enter Password"
-                id="password"
                 required
                 autocomplete="off"
               />
@@ -48,7 +34,7 @@
               />
             </fieldset>
             <fieldset class="form-group">
-              <label for="displayName">Dispaly Name:</label>
+              <label for="displayName">Display Name:</label>
               <input
                 type="text"
                 class="form-control"
@@ -63,7 +49,7 @@
           </div>
           <div class="card-footer">
             <fieldset class="form-group text-right">
-              <input type="submit" class="btn btn-primary" value="Register" />
+              <input type="submit" class="btn btn-primary" value="Update" />
               <a routerLink="/home"
                 >&nbsp;
                 <input type="button" class="btn btn-info" value="Cancel" />

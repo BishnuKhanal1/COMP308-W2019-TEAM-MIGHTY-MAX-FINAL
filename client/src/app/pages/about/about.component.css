@@ -11,3 +11,8 @@
 .card:hover .card-img-top {
   opacity: 0.3;
 }
+
+body {
+  margin: 0;
+  background-color: #fff;
+}

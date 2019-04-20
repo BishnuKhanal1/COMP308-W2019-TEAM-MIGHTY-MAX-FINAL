@@ -6,6 +6,34 @@ let jwt = require('jsonwebtoken');
 let surveyModel = require('../models/survey');
 let surveyAnswersModel = require('../models/surveyAnswers');
 
+module.exports.displaySurveyAddPage = (req, res, next) => {
+    res.json({success: true, msg: 'Successfully Displayed Add Page'});
+}
+
+module.exports.processSurveyAddPage = (req, res, next) => {
+
+    let newSurvey = surveyModel({
+        "title":req.body.title,
+        "typeOfSurvey":req.body.type,
+        "question1": req.body.question1,
+        "question2": req.body.question2,
+        "question3": req.body.question3,
+        "question4": req.body.question4,
+        "question5": req.body.question5,
+        "question6": req.body.question6
+    });
+
+    surveyModel.create(newSurvey, (err, surveyModel) => {
+        if(err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.json({success: true, msg: 'Successfully Added New Survey'});
+        }
+    });
+}
+
 module.exports.displaySurveys = (req, res, next) =>{
     surveyModel.find((err, surveys) => {
         if(err) {

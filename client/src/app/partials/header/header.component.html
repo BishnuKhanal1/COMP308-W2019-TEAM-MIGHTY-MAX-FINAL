@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" routerLink="/"
-    ><img src="../../../assets/images/mighty_max_logo.png" alt="© Might Max" style="height: 60px; width: 60px" /> Mighty
+    ><img src="../../../assets/images/mighty_max_logo.png" alt="Mighty-Max" style="width: 60px; height: 60px" /> Mighty
     Max Surveys</a
   >
   <button
@@ -37,11 +37,18 @@
         >
       </li>
 
+      <li *ngIf="isLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="profile/{{ user.id }}"
+          ><i class="fas fa-lg fa-id-badge" aria-hidden="true"></i>
+          Profile</a
+        >
+      </li>
+
       <li
         *ngIf="isLoggedIn()"
         class="navbar-text text-success ml-5 mr-5 d-none d-lg-inline"
       >
-        <i class="fas fa-lg fa-user"></i> Welcome, {{ user.displayName }}
+        <i class="fas fa-lg fa-user"></i> Hello, {{ user.displayName }}
       </li>
 
       <li *ngIf="isLoggedIn()" class="nav-item">
