@@ -44,14 +44,8 @@
     "@types/passport-local": "^1.0.33",
     "@types/passport-local-mongoose": "^4.0.12"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BishnuKhanal1/COMP308-W2019-TEAM-MIGHTY-MAX.git"
-  },
+  "repository": {},
   "author": "Bishnu Khanal on behalf of Team Mighty-Max",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BishnuKhanal1/COMP308-W2019-TEAM-MIGHTY-MAX/issues"
-  },
-  "homepage": "https://github.com/BishnuKhanal1/COMP308-W2019-TEAM-MIGHTY-MAX#readme"
+  "bugs": {}
 }
